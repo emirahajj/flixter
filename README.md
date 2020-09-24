@@ -23,7 +23,6 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 App as run on an iPhone XR, iPhone 6, and iPhone XR in landscape mode
 
 <img src='https://i.imgur.com/iUxEFZ9.gif' width="250 px"/>
-<img src='https://i.imgur.com/ahoLpi0.gif' width="250 px"/>
-
+[Imgur](https://i.imgur.com/ahoLpi0m.gif)
 ### Notes
 Describe any challenges encountered while building the app.
