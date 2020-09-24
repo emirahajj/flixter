@@ -1,24 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wh9-Uv-bhf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MovieViewController" customModule="flixter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aHs-fh-33Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="141" id="prP-ao-fDv" customClass="MovieCell" customModule="flixter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="141"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="prP-ao-fDv" id="qsM-bu-Q6E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0mU-lT-zHK">
+                                                    <rect key="frame" x="15" y="11" width="91" height="119"/>
+                                                    <color key="backgroundColor" red="0.38368963070000001" green="1" blue="0.75902940100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="119" id="Fhd-2G-zfd"/>
+                                                        <constraint firstAttribute="width" constant="91" id="fpy-05-sQg"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8L-Sm-0GU">
+                                                    <rect key="frame" x="114" y="16" width="246" height="36"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKO-KZ-EEc">
+                                                    <rect key="frame" x="114" y="52" width="246" height="78.5"/>
+                                                    <string key="text">A British Army doctor comes back from a war, thinking that she has PTSD only to discover that there is a more daunting malevolence at work making the life that she knew unfamiliar.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0mU-lT-zHK" secondAttribute="bottom" constant="10" id="4Q0-Ge-IbG"/>
+                                                <constraint firstItem="0mU-lT-zHK" firstAttribute="top" secondItem="qsM-bu-Q6E" secondAttribute="top" constant="11" id="CMv-6I-keE"/>
+                                                <constraint firstItem="0mU-lT-zHK" firstAttribute="leading" secondItem="qsM-bu-Q6E" secondAttribute="leading" constant="15" id="Mnh-X9-3dT"/>
+                                                <constraint firstItem="EKO-KZ-EEc" firstAttribute="top" secondItem="I8L-Sm-0GU" secondAttribute="bottom" id="Ob5-lU-FbZ"/>
+                                                <constraint firstItem="EKO-KZ-EEc" firstAttribute="leading" secondItem="0mU-lT-zHK" secondAttribute="trailing" constant="8" id="SMQ-ko-dAE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="I8L-Sm-0GU" secondAttribute="bottom" constant="78" id="h3o-lc-Pvt"/>
+                                                <constraint firstItem="I8L-Sm-0GU" firstAttribute="trailing" secondItem="qsM-bu-Q6E" secondAttribute="trailingMargin" id="mRP-M0-Esd"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EKO-KZ-EEc" secondAttribute="bottom" constant="10" id="qVW-N7-IM3"/>
+                                                <constraint firstAttribute="trailing" secondItem="EKO-KZ-EEc" secondAttribute="trailing" constant="15" id="sb3-es-V1V"/>
+                                                <constraint firstItem="I8L-Sm-0GU" firstAttribute="top" secondItem="qsM-bu-Q6E" secondAttribute="topMargin" constant="5" id="sxM-Zt-B7o"/>
+                                                <constraint firstItem="I8L-Sm-0GU" firstAttribute="leading" secondItem="0mU-lT-zHK" secondAttribute="trailing" constant="8" id="vpo-1Q-sTe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="SynopsisLabel" destination="EKO-KZ-EEc" id="rOe-gu-dDI"/>
+                                            <outlet property="posterView" destination="0mU-lT-zHK" id="s7R-Qf-gZg"/>
+                                            <outlet property="titleLabel" destination="I8L-Sm-0GU" id="ae0-45-uWX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aHs-fh-33Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3AQ-gK-Zff"/>
+                            <constraint firstItem="aHs-fh-33Z" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="KMN-zR-K3J"/>
+                            <constraint firstItem="aHs-fh-33Z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jk8-fV-B3D"/>
+                            <constraint firstItem="aHs-fh-33Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nQw-EM-tBx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Movies" id="n71-An-suw"/>
+                    <connections>
+                        <outlet property="tableView" destination="aHs-fh-33Z" id="lt8-Ez-9nf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1304.8" y="123.68815592203899"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WCd-cr-M4y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wh9-Uv-bhf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eoF-Zq-Cz0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lFP-p9-T5Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Do4-vJ-lnO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="365.60000000000002" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
