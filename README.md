@@ -20,10 +20,13 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 - [ ] (1pt) Run your app on a real device.
 
 ### App Walkthrough GIF
-App as run on an iPhone XR, iPhone 6, and iPhone XR in landscape mode
+App as run on an iPhone 6, iPhone XR, and iPhone XR in landscape mode.
 
 <img src ='https://i.imgur.com/7NQ1kEQ.gif'/>
 <img src ='https://i.imgur.com/HLNBSTO.gif'/>
 <img src ='https://i.imgur.com/WZQ1dJc.gif'/>
 ### Notes
 Describe any challenges encountered while building the app.
+
+The most challenging part was figuring out the constraints. I had to do some twaeking beyond what the tutorials outlined, but I eventually got it!
+Because I'm on Xcode 10.1, I had to downgrade the version of the AlamoFireImage pod for it to work on my machine, because otherwise, the import statement would give me a compliation error.
