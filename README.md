@@ -24,7 +24,6 @@ App as run on an iPhone XR, iPhone 6, and iPhone XR in landscape mode
 
 <img src="https://i.imgur.com/iUxEFZ9.gif" width="250px"><br>
 <img src="https://i.imgur.com/ahoLpi0.gif" width="250px"><br>
-<img src="https://i.imgur.com/kkSiQ2g.gif" width="250px"><br>
 
 ### Notes
 Describe any challenges encountered while building the app.
