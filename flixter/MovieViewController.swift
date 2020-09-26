@@ -37,7 +37,6 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 //reload data cuz upon opening up the movies.count is zero cuz data hasn't been fetched yet! this will return 0 for movies.count so selfForRowAt will not display anything
                 self.tableView.reloadData()
-                print(dataDictionary)
             }
         }
         task.resume()
@@ -56,13 +55,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
-        var synopsis = movie["overview"] as! String
-        
-        //Maratón After had no synopsis in the API, so I added
-        if title == "Maratón After"
-        {
-            synopsis = "This is a placeholder text so there are no empty cells. I'm loving this iOS course so far!"
-        }
+        let synopsis = movie["overview"] as! String
         
         //gets called 50 times, or as many times as the number returned in previous function
         cell.titleLabel.text = title
