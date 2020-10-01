@@ -70,5 +70,32 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
+    //leaving the curent screen-you "prepare" the next screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //first find the selected movie --sender is the cell that is passed over
+        
+        //ensuring the sender is the type of cell we want
+        let cell = sender as! UITableViewCell
+        
+        //getting the index of the movie that lives in the table view
+        //indexPath stores the row and section that something lives in
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        //movie now eauals the
+        let movie = movies[indexPath.row]
+        
+        
+        let detailsViewController =  segue.destination as! MovieDetailsViewController
+        
+        //setting the movie variable in the MovieDetailsViewController file to the movie we just extracted
+        detailsViewController.movie = movie
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+        //then pass the selected movie to the details view controller
+        
+    }
+    
 
 }
