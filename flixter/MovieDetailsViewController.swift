@@ -10,11 +10,14 @@ import UIKit
 import youtube_ios_player_helper
 import AlamofireImage
 
-class MovieDetailsViewController: UIViewController {
+class MovieDetailsViewController: UIViewController, YTPlayerViewDelegate {
     
     var movie: [String:Any]!
     
-    @IBOutlet var playerView : YTPlayerView!
+    var videoStuff = [[String:Any]]()
+    var YTlink: String!
+    
+    @IBOutlet weak var playerView: YTPlayerView!
     
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var posterView: UIImageView!
@@ -27,6 +30,8 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playerView.delegate = self
         
         titleLabel.text = movie["title"] as? String
         
@@ -42,11 +47,51 @@ class MovieDetailsViewController: UIViewController {
         backdropView.af_setImage(withURL: backdropUrl!)
         //print(movie)
         posterView.isUserInteractionEnabled = true
+        
+        let x = movie["id"] as! Int
+        let ID = String(x)
+        
+        let finalUrl = URL(string: "https://api.themoviedb.org/3/movie/" + ID + "/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
+        
+        let request = URLRequest(url: finalUrl, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This will run when the network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                
+                print(dataDictionary)
+                
+                self.videoStuff = dataDictionary["results"] as! [[String:Any]]
+                //print(self.videoStuff)
+                let vidinfo = self.videoStuff.first!
+                //print(vidinfo)
+                let ytPath = vidinfo["key"] as! String
+                //print(ytPath)
+                //self.YTlink = "https://www.youtube.com/watch?v=/" + ytPath
+                self.playerView.load(withVideoId: ytPath)
+
+                
+            }
+        }
+        task.resume()
+        posterView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0).cgColor
+        posterView.layer.borderWidth = 2
+        
+        
+        
+
 
         // Do any additional setup after loading the view.
         
         
         
+    }
+    
+    func playerViewPreferredWebViewBackgroundColor(_ playerView: YTPlayerView) -> UIColor {
+        return .clear
     }
     
 
