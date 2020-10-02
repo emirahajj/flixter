@@ -13,7 +13,6 @@ class MovieDetailsViewController: UIViewController {
     
     var movie: [String:Any]!
     
-    
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var posterView: UIImageView!
     
@@ -21,6 +20,7 @@ class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var synopsisLabel: UILabel!
     
+    @IBOutlet weak var invisibleButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +37,40 @@ class MovieDetailsViewController: UIViewController {
         let backdropPath = movie["backdrop_path"] as! String
         let backdropUrl = URL(string: "https://image.tmdb.org/t/p/w780" + backdropPath)
         backdropView.af_setImage(withURL: backdropUrl!)
+        //print(movie)
+        posterView.isUserInteractionEnabled = true
 
         // Do any additional setup after loading the view.
+        
+        
+        
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //ensuring the sender is the type of cell we want
+        //_ = sender as! UIButton
+        
+        //getting the index of the movie that lives in the table view
+        //indexPath stores the row and section that something lives in
+        
+        
+        let trailerViewController =  segue.destination as! trailerViewController
+        
+        let x = movie["id"] as! Int
+        let ID = String(x)
+        
+        //setting the movie variable in the MovieDetailsViewController file to the movie we just extracted
+        trailerViewController.movieID = ID
+        
+     
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }

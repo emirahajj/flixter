@@ -8,6 +8,7 @@ target 'flixter' do
   # Pods for flixter
 pod 'Alamofire', '<= 4.7.2'
 pod 'AlamofireImage', '<= 3.4'
+pod 'youtube-ios-player-helper'
 
 
   target 'flixterTests' do

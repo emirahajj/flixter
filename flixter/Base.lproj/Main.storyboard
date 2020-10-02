@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="1710"/>
+            <point key="canvasLocation" x="365.60000000000002" y="1709.5952023988007"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="FPP-wi-cgQ">
@@ -106,6 +106,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mEb-m7-UVI">
                                 <rect key="frame" x="16" y="167" width="109.5" height="166"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="166" id="qzZ-j7-MNX"/>
                                     <constraint firstAttribute="width" constant="109.5" id="uzh-Nc-loS"/>
@@ -123,11 +124,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzN-9J-iNi">
+                                <rect key="frame" x="16" y="167" width="109.5" height="166"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="VhO-4b-SUa"/>
+                                    <constraint firstAttribute="width" constant="109.5" id="rHV-gO-VnM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="LK2-od-9Bl" kind="presentation" id="ndm-ih-DbC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eYw-8x-1iE" firstAttribute="top" secondItem="mEb-m7-UVI" secondAttribute="bottom" constant="22" id="06v-Rt-oMl"/>
                             <constraint firstItem="NgP-aZ-JE2" firstAttribute="top" secondItem="mqv-7k-Vx8" secondAttribute="top" id="14q-qy-Upp"/>
+                            <constraint firstItem="JzN-9J-iNi" firstAttribute="leading" secondItem="mqv-7k-Vx8" secondAttribute="leading" constant="16" id="1tJ-Ad-0m4"/>
                             <constraint firstItem="NgP-aZ-JE2" firstAttribute="leading" secondItem="mqv-7k-Vx8" secondAttribute="leading" id="2bn-40-ZVc"/>
                             <constraint firstItem="mqv-7k-Vx8" firstAttribute="trailing" secondItem="eYw-8x-1iE" secondAttribute="trailing" constant="16" id="9HS-oK-efs"/>
                             <constraint firstItem="WnB-dD-km8" firstAttribute="leading" secondItem="mEb-m7-UVI" secondAttribute="trailing" constant="16" id="9Q6-v6-JMB"/>
@@ -137,6 +150,7 @@
                             <constraint firstItem="WnB-dD-km8" firstAttribute="leading" secondItem="mEb-m7-UVI" secondAttribute="trailing" constant="16" id="TGN-DA-ZZy"/>
                             <constraint firstItem="NgP-aZ-JE2" firstAttribute="trailing" secondItem="mqv-7k-Vx8" secondAttribute="trailing" id="dtC-4s-gKa"/>
                             <constraint firstItem="eYw-8x-1iE" firstAttribute="leading" secondItem="mqv-7k-Vx8" secondAttribute="leading" constant="16" id="m50-ez-D7m"/>
+                            <constraint firstItem="JzN-9J-iNi" firstAttribute="bottom" secondItem="NgP-aZ-JE2" secondAttribute="bottom" constant="76" id="s5p-p8-ZAq"/>
                             <constraint firstItem="mEb-m7-UVI" firstAttribute="leading" secondItem="mqv-7k-Vx8" secondAttribute="leading" constant="16" id="tgd-Zh-Knr"/>
                             <constraint firstAttribute="bottom" secondItem="NgP-aZ-JE2" secondAttribute="bottom" constant="410" id="zoL-q0-QoO"/>
                         </constraints>
@@ -144,6 +158,7 @@
                     </view>
                     <connections>
                         <outlet property="backdropView" destination="NgP-aZ-JE2" id="ldP-K8-dfV"/>
+                        <outlet property="invisibleButton" destination="JzN-9J-iNi" id="WBC-Ee-5P7"/>
                         <outlet property="posterView" destination="mEb-m7-UVI" id="aRI-vp-VOE"/>
                         <outlet property="synopsisLabel" destination="eYw-8x-1iE" id="Mnt-5n-TdR"/>
                         <outlet property="titleLabel" destination="WnB-dD-km8" id="7uX-7o-N1B"/>
@@ -151,7 +166,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ho-uS-e0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365.60000000000002" y="2530.8845577211396"/>
+            <point key="canvasLocation" x="976.79999999999995" y="2530.8845577211396"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="qLO-H7-LUC">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="LK2-od-9Bl" customClass="trailerViewController" customModule="flixter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Sj-E3-Nn7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjp-Z2-1OJ" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="213.5" width="375" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="vBu-bW-fjg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="jjp-Z2-1OJ" firstAttribute="leading" secondItem="HmI-h1-Xdq" secondAttribute="leading" id="TYC-r6-AOj"/>
+                            <constraint firstItem="jjp-Z2-1OJ" firstAttribute="trailing" secondItem="HmI-h1-Xdq" secondAttribute="trailing" id="Xed-a9-Y3D"/>
+                            <constraint firstItem="jjp-Z2-1OJ" firstAttribute="centerY" secondItem="4Sj-E3-Nn7" secondAttribute="centerY" id="zlL-nR-qgC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HmI-h1-Xdq"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerView" destination="jjp-Z2-1OJ" id="wFJ-yr-f2R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8r-d0-hz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.79999999999995" y="3312.5937031484259"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="WCd-cr-M4y">
@@ -210,6 +257,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="posterView" destination="8PG-es-ylc" id="cj2-ax-7Eg"/>
+                                            <segue destination="vSx-e6-hBb" kind="show" id="dEv-6w-iPt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -276,4 +324,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="R1J-Lo-uKz"/>
+    </inferredMetricsTieBreakers>
 </document>

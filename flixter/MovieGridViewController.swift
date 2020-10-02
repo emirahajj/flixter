@@ -75,6 +75,30 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell;
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //first find the selected movie --sender is the cell that is passed over
+        
+        //ensuring the sender is the type of cell we want
+        let cell = sender as! UICollectionViewCell
+        
+        //getting the index of the movie that lives in the table view
+        //indexPath stores the row and section that something lives in
+        let indexPath = collectionView.indexPath(for: cell)!
+        
+        //movie now eauals the
+        let movie = movies[indexPath.row]
+        
+        
+        let heroDeetsViewController =  segue.destination as! MovieDetailsViewController
+        
+        //setting the movie variable in the MovieDetailsViewController file to the movie we just extracted
+        heroDeetsViewController.movie = movie
+        
+        
+        //then pass the selected movie to the details view controller
+        
+    }
+    
 
     /*
     // MARK: - Navigation
