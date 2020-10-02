@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 import AlamofireImage
 
 class MovieDetailsViewController: UIViewController {
     
     var movie: [String:Any]!
+    
+    @IBOutlet var playerView : YTPlayerView!
     
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var posterView: UIImageView!

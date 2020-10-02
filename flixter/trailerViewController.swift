@@ -47,36 +47,9 @@ class trailerViewController: UIViewController {
                 //self.YTlink = "https://www.youtube.com/watch?v=/" + ytPath
                 self.playerView.load(withVideoId: ytPath)
                 
-//                let myURL = URL(string: self.YTlink)
-//                let myRequest = URLRequest(url: myURL!)
-//                self.webView.allowsBackForwardNavigationGestures = true
-//                self.webView.load(myRequest)
-                
-//                let webConfiguration = WKWebViewConfiguration()
-//                webConfiguration.allowsInlineMediaPlayback = true
-//                webConfiguration.mediaTypesRequiringUserActionForPlayback = []
-//
-//                self.webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 375, height: 300), configuration: webConfiguration)
-//                self.view.addSubview(self.webView)
-//
-//                if let videoURL:URL = URL(string: self.YTlink) {
-//                    let request:URLRequest = URLRequest(url: videoURL)
-//                    self.webView.load(request)
-//                }
-
-                
-                //reload data cuz upon opening up the movies.count is zero cuz data hasn't been fetched yet! this will return 0 for movies.count so selfForRowAt will not display anything
-                //self.tableView.reloadData()
             }
         }
         task.resume()
-        //let vidinfo = self.videoStuff[1]
-//        let ytPath = vidinfo["key"] as! String
-//        YTlink = "https://www.youtube.com/watch?v=/" + ytPath
-//
-//        let myURL = URL(string: YTlink)
-//        let myRequest = URLRequest(url: myURL!)
-//        webView.load(myRequest)
 
         // Do any additional setup after loading the view.
     }
